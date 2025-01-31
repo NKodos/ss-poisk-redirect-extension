@@ -20,5 +20,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         }
       });
     }
+    else {
+      chrome.storage.local.set({
+        ssRedirectInfo: {
+          url: null,
+          tabId,
+        }
+      })
+    };
   }
 });
